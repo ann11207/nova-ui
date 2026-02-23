@@ -3,12 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nova-native-ui — React Native UI Library</title>
-  <meta name="description" content="A modern, customizable, and accessible React Native UI component library built with TypeScript." />
-  <meta property="og:title" content="nova-native-ui" />
-  <meta property="og:description" content="Ship beautiful React Native apps faster with 35+ production-ready components." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ibidi.github.io/nova-ui/" />
+  <title>All Components — nova-native-ui</title>
+  <meta name="description" content="Browse all 35+ production-ready React Native components from nova-native-ui." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -63,30 +59,6 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    @keyframes slideRight {
-      from { opacity: 0; transform: translateX(-20px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-    @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,0.3); }
-      50% { box-shadow: 0 0 0 12px rgba(99,102,241,0); }
-    }
-    @keyframes gradient-shift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
     @keyframes shimmer {
       0% { transform: translateX(-100%); }
       100% { transform: translateX(100%); }
@@ -95,9 +67,9 @@
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
-    @keyframes orbit {
-      from { transform: rotate(0deg) translateX(140px) rotate(0deg); }
-      to { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,0.3); }
+      50% { box-shadow: 0 0 0 12px rgba(99,102,241,0); }
     }
 
     .reveal {
@@ -112,20 +84,14 @@
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
 
     /* ═══ NAV ═══ */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: transparent;
+      background: rgba(9,9,11,0.8);
       backdrop-filter: blur(16px) saturate(180%);
       -webkit-backdrop-filter: blur(16px) saturate(180%);
-      border-bottom: 1px solid transparent;
-      transition: all 0.4s;
-    }
-    nav.scrolled {
-      background: rgba(9,9,11,0.8);
-      border-bottom-color: rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .nav-inner {
       max-width: 1180px; margin: 0 auto; padding: 0 32px;
@@ -160,171 +126,31 @@
     .nav-cta:hover { background: rgba(255,255,255,0.15) !important; transform: translateY(-1px); }
     .nav-cta svg { width: 14px; height: 14px; }
 
-    /* ═══ HERO ═══ */
-    .hero {
-      padding: 160px 32px 120px;
+    /* ═══ PAGE HEADER ═══ */
+    .page-header {
+      padding: 100px 32px 48px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      background: #09090B;
+      max-width: 1180px;
+      margin: 0 auto;
     }
-    .hero-canvas {
-      position: absolute; inset: 0; pointer-events: none;
-      width: 100%; height: 100%;
-    }
-    .hero-fade {
-      position: absolute; bottom: 0; left: 0; right: 0; height: 180px;
-      background: linear-gradient(to bottom, transparent, #09090B);
-      pointer-events: none; z-index: 1;
-    }
-    .hero-content { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
-    .hero-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      padding: 6px 16px 6px 8px; border-radius: 100px;
-      font-size: 12.5px; font-weight: 500; color: rgba(255,255,255,0.6);
-      margin-bottom: 32px; animation: fadeUp 0.6s ease both;
-      transition: border-color 0.3s, box-shadow 0.3s;
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    }
-    .hero-pill:hover { border-color: rgba(99,102,241,0.4); box-shadow: 0 0 0 3px rgba(99,102,241,0.1); }
-    .hero-pill-badge {
-      background: linear-gradient(135deg, var(--indigo), var(--violet));
-      color: var(--white); font-size: 10px; font-weight: 700;
-      padding: 3px 8px; border-radius: 100px; letter-spacing: 0.5px;
-    }
-    .hero h1 {
-      font-size: clamp(42px, 5.5vw, 68px);
+    .page-header h1 {
+      font-size: clamp(32px, 4vw, 48px);
       font-weight: 700; letter-spacing: -0.035em;
-      line-height: 1.05; margin-bottom: 24px;
+      line-height: 1.1; margin-bottom: 16px;
       color: #FFFFFF;
+      animation: fadeUp 0.6s ease both;
+    }
+    .page-header p {
+      font-size: 16px; color: rgba(255,255,255,0.45); max-width: 520px;
+      margin: 0 auto; line-height: 1.6; letter-spacing: -0.01em;
       animation: fadeUp 0.6s ease 0.1s both;
     }
-    .hero h1 .accent {
-      background: linear-gradient(135deg, #818CF8 0%, #C084FC 50%, #7cff67 100%);
-      background-size: 200% auto;
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradient-shift 4s ease infinite;
-    }
-    .hero p {
-      font-size: 17px; color: rgba(255,255,255,0.5); max-width: 480px;
-      margin: 0 auto 44px; line-height: 1.65; letter-spacing: -0.01em;
-      animation: fadeUp 0.6s ease 0.2s both;
-    }
-    .hero-actions {
-      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-      animation: fadeUp 0.6s ease 0.3s both;
-    }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 24px; border-radius: 10px; font-weight: 600;
-      font-size: 14px; text-decoration: none; border: none; cursor: pointer;
-      font-family: var(--font); letter-spacing: -0.01em;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn:active { transform: scale(0.97); }
-    .btn-primary {
-      background: var(--indigo); color: var(--white);
-      box-shadow: 0 1px 2px rgba(0,0,0,0.2), 0 4px 16px rgba(99,102,241,0.3);
-    }
-    .btn-primary:hover { box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 8px 28px rgba(99,102,241,0.4); transform: translateY(-1px); }
-    .btn-ghost {
-      background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7);
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-    .btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2); }
 
-    .install-bar {
-      display: inline-flex; align-items: center; gap: 14px;
-      background: var(--gray-950); color: rgba(255,255,255,0.7);
-      padding: 14px 20px; border-radius: 12px;
-      font-family: var(--mono); font-size: 13.5px;
-      margin-top: 40px; animation: fadeUp 0.6s ease 0.4s both;
-      position: relative; overflow: hidden;
-    }
-    .install-bar::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
-      animation: shimmer 3s ease-in-out infinite;
-    }
-    .install-bar .prompt { color: var(--indigo-light); user-select: none; }
-    .install-bar code { color: rgba(255,255,255,0.9); position: relative; }
-    .copy-btn {
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.5); padding: 5px 12px; border-radius: 6px;
-      cursor: pointer; font-size: 11.5px; font-family: var(--font);
-      font-weight: 500; transition: all 0.2s; position: relative;
-    }
-    .copy-btn:hover { background: rgba(255,255,255,0.14); color: rgba(255,255,255,0.8); }
-    .copy-btn.copied { background: rgba(16,185,129,0.2); border-color: rgba(16,185,129,0.3); color: var(--emerald); }
-
-    /* ═══ STATS ═══ */
-    .stats {
-      padding: 40px 32px 60px; position: relative; z-index: 2;
-      background: #09090B;
-    }
-    .stats-inner {
-      max-width: 700px; margin: 0 auto;
-      display: flex; justify-content: center; gap: 48px;
-    }
-    .stat { text-align: center; }
-    .stat-value {
-      font-size: 32px; font-weight: 700; letter-spacing: -0.03em;
-      color: #FFFFFF;
-    }
-    .stat-label { font-size: 13px; color: rgba(255,255,255,0.4); font-weight: 500; margin-top: 4px; }
-
-    /* ═══ FEATURES ═══ */
-    .features { padding: 140px 32px; max-width: 1180px; margin: 0 auto; background: transparent; }
-    .section-tag {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
-      text-transform: uppercase; color: var(--indigo);
-      margin-bottom: 16px;
-    }
-    .section-tag::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--indigo); animation: pulse-glow 2s ease infinite;
-    }
-    .section-heading {
-      font-size: clamp(28px, 3.5vw, 42px);
-      font-weight: 700; letter-spacing: -0.03em; line-height: 1.15;
-      color: #fff; margin-bottom: 16px;
-    }
-    .section-sub {
-      font-size: 16px; color: rgba(255,255,255,0.4); max-width: 500px;
-      line-height: 1.6; letter-spacing: -0.01em;
-    }
-    .section-header { text-align: center; margin-bottom: 64px; }
-    .section-header .section-sub { margin: 0 auto; }
-
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
-    .feature-item {
-      background: var(--gray-950); padding: 36px 32px;
-      transition: background 0.3s;
-    }
-    .feature-item:hover { background: rgba(255,255,255,0.02); }
-    .feature-icon {
-      width: 40px; height: 40px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; margin-bottom: 20px;
-    }
-    .feature-item h3 {
-      font-size: 15px; font-weight: 650; margin-bottom: 8px;
-      letter-spacing: -0.02em; color: #fff;
-    }
-    .feature-item p {
-      font-size: 13.5px; color: rgba(255,255,255,0.4); line-height: 1.65;
-    }
-
-    /* ═══ COMPONENTS SHOWCASE ═══ */
-    .showcase { padding: 140px 32px; background: rgba(255,255,255,0.02); }
-    .showcase-inner { max-width: 1180px; margin: 0 auto; }
-
+    /* ═══ FILTER TABS ═══ */
     .component-tabs {
       display: flex; gap: 6px; margin-bottom: 48px; justify-content: center;
-      flex-wrap: wrap;
+      flex-wrap: wrap; padding: 0 32px;
+      animation: fadeUp 0.6s ease 0.2s both;
     }
     .tab-btn {
       padding: 8px 18px; border-radius: 100px; font-size: 13px;
@@ -336,6 +162,10 @@
     .tab-btn.active {
       background: var(--indigo); color: #fff; border-color: var(--indigo);
     }
+
+    /* ═══ COMPONENT GRID ═══ */
+    .showcase { padding: 0 32px 80px; }
+    .showcase-inner { max-width: 1180px; margin: 0 auto; }
 
     .component-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -351,6 +181,7 @@
       border-color: rgba(255,255,255,0.12); box-shadow: 0 8px 30px rgba(0,0,0,0.2);
       transform: translateY(-2px);
     }
+    .comp-card.hidden { display: none; }
     .comp-preview {
       padding: 32px 24px; display: flex; align-items: center;
       justify-content: center; gap: 10px; flex-wrap: wrap;
@@ -378,7 +209,22 @@
     .comp-code-btn:active { transform: scale(0.95); }
     .comp-code-btn svg { width: 12px; height: 12px; }
 
-    /* Live previews */
+    /* ═══ INTERACTIVE CONTROLS ═══ */
+    .comp-controls {
+      display: flex; gap: 4px; padding: 8px 16px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.02); flex-wrap: wrap;
+    }
+    .comp-control-btn {
+      font-size: 10px; font-weight: 600; font-family: var(--font);
+      padding: 4px 8px; border-radius: 5px;
+      border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.15s;
+    }
+    .comp-control-btn:hover { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
+    .comp-control-btn.active { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+
+    /* ═══ LIVE PREVIEW STYLES ═══ */
     .p-btn {
       padding: 9px 20px; border-radius: 8px; font-size: 13.5px;
       font-weight: 600; border: none; cursor: pointer; font-family: var(--font);
@@ -492,86 +338,6 @@
     .p-checkbox-on { background: var(--indigo); border-color: var(--indigo); }
     .p-checkbox-off { background: transparent; border-color: rgba(255,255,255,0.2); }
     .p-check-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.6); }
-
-    /* ═══ CODE ═══ */
-    .code-section { padding: 140px 32px; max-width: 1180px; margin: 0 auto; }
-    .code-window {
-      background: #0C0C0E; border-radius: 14px; overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.06);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-      margin-top: 48px;
-    }
-    .code-topbar {
-      padding: 14px 20px; display: flex; align-items: center; gap: 8px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .code-dot {
-      width: 10px; height: 10px; border-radius: 50%;
-    }
-    .code-dot-red { background: #FF605C; }
-    .code-dot-yellow { background: #FFBD44; }
-    .code-dot-green { background: #00CA4E; }
-    .code-filename {
-      margin-left: 12px; font-size: 12px; color: rgba(255,255,255,0.3);
-      font-family: var(--mono);
-    }
-    .code-body {
-      padding: 24px 28px; overflow-x: auto;
-    }
-    .code-body pre {
-      font-family: var(--mono); font-size: 13px; line-height: 1.85;
-      color: rgba(255,255,255,0.5);
-    }
-    .c-kw { color: #C084FC; }
-    .c-fn { color: #67E8F9; }
-    .c-str { color: #86EFAC; }
-    .c-comp { color: #FDA4AF; }
-    .c-prop { color: #93C5FD; }
-    .c-com { color: rgba(255,255,255,0.2); }
-    .c-br { color: rgba(255,255,255,0.35); }
-    .c-w { color: rgba(255,255,255,0.75); }
-
-    /* ═══ CTA ═══ */
-    .cta {
-      padding: 120px 32px; text-align: center; position: relative;
-      overflow: hidden;
-    }
-    .cta-bg {
-      position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(ellipse 500px 300px at 50% 60%, rgba(99,102,241,0.08) 0%, transparent 70%);
-    }
-    .cta-content { position: relative; z-index: 1; }
-    .cta h2 {
-      font-size: clamp(28px, 3.5vw, 44px); font-weight: 700;
-      letter-spacing: -0.03em; margin-bottom: 16px; color: #fff;
-    }
-    .cta p { font-size: 16px; color: rgba(255,255,255,0.4); max-width: 420px; margin: 0 auto 40px; line-height: 1.6; }
-    .btn-cta-primary {
-      background: var(--indigo); color: var(--white);
-      box-shadow: 0 1px 2px rgba(0,0,0,0.2), 0 4px 16px rgba(99,102,241,0.3);
-    }
-    .btn-cta-primary:hover { box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 8px 28px rgba(99,102,241,0.4); transform: translateY(-1px); }
-    .btn-cta-ghost {
-      background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.6);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .btn-cta-ghost:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.15); }
-
-    /* ═══ FOOTER ═══ */
-    footer {
-      padding: 32px 32px; border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    .footer-inner {
-      max-width: 1180px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    footer p { font-size: 13px; color: rgba(255,255,255,0.35); }
-    footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-weight: 500; transition: color 0.2s; }
-    footer a:hover { color: var(--indigo-light); }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; }
-
-    /* ═══ NEW COMPONENT PREVIEWS ═══ */
 
     /* Skeleton */
     @keyframes skeleton-shimmer {
@@ -845,11 +611,6 @@
       100% { transform: translateX(-50%); }
     }
     .p-lc-svg { width: 28px; height: 28px; flex-shrink: 0; }
-    .p-lc-icon {
-      width: 32px; height: 32px; border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px; font-weight: 700; flex-shrink: 0;
-    }
     .p-lc-name { font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.6); white-space: nowrap; }
     .p-lc-variant-switch {
       display: flex; gap: 4px; margin-top: 16px;
@@ -865,22 +626,7 @@
     .p-lc-vbtn:hover { color: rgba(255,255,255,0.6); }
     .p-lc-vbtn-active { background: rgba(255,255,255,0.08); color: var(--indigo-light); box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
 
-    /* ═══ INTERACTIVE CONTROLS ═══ */
-    .comp-controls {
-      display: flex; gap: 4px; padding: 8px 16px;
-      border-top: 1px solid rgba(255,255,255,0.04);
-      background: rgba(255,255,255,0.02); flex-wrap: wrap;
-    }
-    .comp-control-btn {
-      font-size: 10px; font-weight: 600; font-family: var(--font);
-      padding: 4px 8px; border-radius: 5px;
-      border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03);
-      color: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.15s;
-    }
-    .comp-control-btn:hover { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
-    .comp-control-btn.active { background: var(--indigo); color: #fff; border-color: var(--indigo); }
-
-    /* ═══ COMPONENT DETAIL MODAL ═══ */
+    /* ═══ MODAL ═══ */
     .modal-overlay {
       position: fixed; inset: 0; z-index: 200;
       background: rgba(9,9,11,0.5);
@@ -1013,43 +759,48 @@
       color: #fff; font-size: 12px; font-weight: 700; flex-shrink: 0;
     }
 
+    /* ═══ FOOTER ═══ */
+    footer {
+      padding: 32px 32px; border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner {
+      max-width: 1180px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    footer p { font-size: 13px; color: rgba(255,255,255,0.35); }
+    footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    footer a:hover { color: var(--indigo-light); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; }
+
     /* ═══ MOBILE ═══ */
     .mobile-menu { display: none; background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.6); padding: 4px; }
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .mobile-menu { display: block; }
-      .features-grid { grid-template-columns: 1fr; }
       .component-grid { grid-template-columns: 1fr; }
-      .stats-inner { gap: 28px; }
-      .stat-value { font-size: 24px; }
-      .hero { padding: 130px 20px 80px; }
+      .page-header { padding: 90px 20px 32px; }
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
       .modal-overlay { padding: 12px; align-items: flex-end; }
-      .modal-content { max-height: 90vh; border-radius: 20px 20px 0 0; background: var(--gray-900); }
+      .modal-content { max-height: 90vh; border-radius: 20px 20px 0 0; }
       .modal-prop { flex-wrap: wrap; gap: 4px; }
       .modal-prop-type { width: 100%; margin-left: 0; }
-    }
-    @media (max-width: 480px) {
-      .stats-inner { flex-direction: column; gap: 16px; }
-      .install-bar { font-size: 12px; padding: 12px 16px; }
     }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
-  <nav id="navbar">
+  <nav>
     <div class="nav-inner">
-      <a href="#" class="nav-brand">
+      <a href="index.html" class="nav-brand">
         <div class="nav-logo">
           <svg viewBox="0 0 14 14" fill="none"><path d="M4 7L7 4L10 7L7 10L4 7Z" fill="white"/></svg>
         </div>
         nova-native-ui
       </a>
       <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="components.html">Components</a>
-        <a href="#code">Quick Start</a>
+        <a href="index.html">Home</a>
         <a href="https://github.com/ibidi/nova-ui" target="_blank" class="nav-cta">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           GitHub
@@ -1061,123 +812,34 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <canvas class="hero-canvas" id="heroCanvas"></canvas>
-    <div class="hero-fade"></div>
-    <div class="hero-content">
-      <div class="hero-pill">
-        <span class="hero-pill-badge">v0.2</span>
-        Now available on npm
-      </div>
-      <h1>The component library<br/>React Native <span class="accent">deserves</span></h1>
-      <p>35+ production-ready, accessible, and beautifully crafted components. Theme-aware, animated, and zero dependencies.</p>
-      <div class="hero-actions">
-        <a href="#code" class="btn btn-primary">Get Started</a>
-        <a href="https://github.com/ibidi/nova-ui" class="btn btn-ghost" target="_blank">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          Star on GitHub
-        </a>
-      </div>
-      <div class="install-bar">
-        <span class="prompt">$</span>
-        <code>npm install nova-native-ui</code>
-        <button class="copy-btn" id="copyBtn" onclick="copyInstall()">Copy</button>
-      </div>
-    </div>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h1>All Components</h1>
+    <p>35+ production-ready, accessible components. Click Code to see usage.</p>
   </section>
 
-  <!-- STATS -->
-  <section class="stats reveal">
-    <div class="stats-inner">
-      <div class="stat">
-        <div class="stat-value" data-count="35">0</div>
-        <div class="stat-label">Components</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value" data-count="0">0</div>
-        <div class="stat-label">Dependencies</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">100%</div>
-        <div class="stat-label">TypeScript</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">MIT</div>
-        <div class="stat-label">License</div>
-      </div>
-    </div>
-  </section>
+  <!-- FILTER TABS -->
+  <div class="component-tabs">
+    <button class="tab-btn active" data-filter="All">All</button>
+    <button class="tab-btn" data-filter="Core">Core</button>
+    <button class="tab-btn" data-filter="Form">Form</button>
+    <button class="tab-btn" data-filter="Animated">Animated</button>
+    <button class="tab-btn" data-filter="Layout">Layout</button>
+    <button class="tab-btn" data-filter="Overlay">Overlay</button>
+    <button class="tab-btn" data-filter="Utility">Utility</button>
+  </div>
 
-  <!-- FEATURES -->
-  <section class="features" id="features">
-    <div class="section-header reveal">
-      <div class="section-tag">Why nova?</div>
-      <h2 class="section-heading">Built for developers<br/>who ship fast</h2>
-      <p class="section-sub">Everything you need to build beautiful, consistent mobile experiences without reinventing the wheel.</p>
-    </div>
-    <div class="features-grid reveal">
-      <div class="feature-item">
-        <div class="feature-icon" style="background:rgba(99,102,241,0.08);color:var(--indigo)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        </div>
-        <h3>35+ Components</h3>
-        <p>Buttons, inputs, cards, modals, toasts, avatars, switches, checkboxes — everything you need, nothing you don't.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon" style="background:rgba(139,92,246,0.08);color:var(--violet)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        </div>
-        <h3>Theme System</h3>
-        <p>Light and dark mode built-in. Customize every token — colors, spacing, radii, typography, shadows — to match your brand.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon" style="background:rgba(14,165,233,0.08);color:var(--sky)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-        </div>
-        <h3>TypeScript First</h3>
-        <p>Full type definitions, IntelliSense, and autocomplete. Catch errors at compile time, not runtime.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon" style="background:rgba(16,185,129,0.08);color:var(--emerald)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
-        <h3>Accessible</h3>
-        <p>Proper accessibility roles, states, and labels out of the box. Screen readers and assistive tech just work.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon" style="background:rgba(244,63,94,0.08);color:var(--rose)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        <h3>Animated</h3>
-        <p>Smooth 60fps native animations powered by React Native Animated API. No extra libraries needed.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon" style="background:rgba(245,158,11,0.08);color:var(--amber)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-        </div>
-        <h3>Zero Dependencies</h3>
-        <p>Only React and React Native as peer deps. Tree-shakeable exports — your bundle stays lean.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPONENTS -->
-  <section class="showcase" id="components">
+  <!-- COMPONENTS GRID -->
+  <section class="showcase">
     <div class="showcase-inner">
-      <div class="section-header reveal">
-        <div class="section-tag">Components</div>
-        <h2 class="section-heading">Every building block<br/>you need</h2>
-        <p class="section-sub">Carefully crafted, consistent, and ready to drop into your project.</p>
-      </div>
-
       <div class="component-grid">
-        <div class="comp-card reveal" id="btn-card">
+
+        <!-- 1. Button -->
+        <div class="comp-card reveal" id="btn-card" data-tags="Core,Interactive,Animated">
           <div class="comp-preview" id="btn-preview">
             <button class="p-btn p-btn-solid">Primary</button>
             <button class="p-btn p-btn-outline">Outline</button>
             <button class="p-btn p-btn-ghost">Ghost</button>
-            <button class="p-btn p-btn-soft">Soft</button>
           </div>
           <div class="comp-controls" onclick="event.stopPropagation()">
             <button class="comp-control-btn active" onclick="changeButtonColor('indigo', this)">Indigo</button>
@@ -1189,17 +851,19 @@
           <div class="comp-meta"><span class="comp-name">Button</span><span class="comp-desc">4 variants · 6 colors · 3 sizes</span></div>
         </div>
 
-        <div class="comp-card reveal reveal-delay-1">
+        <!-- 2. Input -->
+        <div class="comp-card reveal" data-tags="Form,Core">
           <div class="comp-preview" style="flex-direction:column;gap:12px">
             <div>
-              <span class="p-input-label">Email address</span>
+              <span class="p-input-label">Email</span>
               <input class="p-input" placeholder="you@example.com" />
             </div>
           </div>
           <div class="comp-meta"><span class="comp-name">Input</span><span class="comp-desc">3 variants · label · error state</span></div>
         </div>
 
-        <div class="comp-card reveal reveal-delay-2" id="avatar-card">
+        <!-- 3. Avatar -->
+        <div class="comp-card reveal" id="avatar-card" data-tags="Data Display,Core">
           <div class="comp-preview" id="avatar-preview">
             <div class="avatar-stack" id="avatar-stack">
               <img class="p-avatar p-avatar-img" src="https://i.pravatar.cc/80?img=1" alt="" />
@@ -1217,7 +881,243 @@
           <div class="comp-meta"><span class="comp-name">Avatar</span><span class="comp-desc">Image or initials · 5 sizes</span></div>
         </div>
 
-        <div class="comp-card reveal">
+        <!-- 4. Badge -->
+        <div class="comp-card reveal" id="badge-card" data-tags="Data Display,Compact">
+          <div class="comp-preview" id="badge-preview">
+            <span class="p-badge p-badge-green">Active</span>
+            <span class="p-badge p-badge-red">Critical</span>
+            <span class="p-badge p-badge-blue">In Review</span>
+            <span class="p-badge p-badge-amber">Pending</span>
+            <span class="p-badge p-badge-violet">Beta</span>
+          </div>
+          <div class="comp-controls" onclick="event.stopPropagation()">
+            <button class="comp-control-btn active" onclick="changeBadgeStyle('filled', this)">Filled</button>
+            <button class="comp-control-btn" onclick="changeBadgeStyle('outline', this)">Outline</button>
+            <button class="comp-control-btn" onclick="changeBadgeStyle('dot', this)">Dot</button>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Badge</span><span class="comp-desc">3 variants · 6 colors · dot mode</span></div>
+        </div>
+
+        <!-- 5. Chip -->
+        <div class="comp-card reveal" data-tags="Form,Interactive">
+          <div class="comp-preview">
+            <span class="p-chip p-chip-active">React Native</span>
+            <span class="p-chip p-chip-inactive">TypeScript</span>
+            <span class="p-chip p-chip-inactive">Expo</span>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Chip</span><span class="comp-desc">Selectable · closable · icon support</span></div>
+        </div>
+
+        <!-- 6. Switch -->
+        <div class="comp-card reveal" data-tags="Form,Animated">
+          <div class="comp-preview" style="flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <div class="p-switch p-switch-on"></div>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Notifications</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div class="p-switch p-switch-off"></div>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Dark mode</span>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Switch</span><span class="comp-desc">Animated toggle · spring transition</span></div>
+        </div>
+
+        <!-- 7. Card -->
+        <div class="comp-card reveal" data-tags="Layout,Core">
+          <div class="comp-preview">
+            <div class="p-card">
+              <div class="p-card-title">Project Update</div>
+              <div class="p-card-sub">3 new tasks completed today</div>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Card</span><span class="comp-desc">Elevated · outlined · filled</span></div>
+        </div>
+
+        <!-- 8. Checkbox -->
+        <div class="comp-card reveal" data-tags="Form,Animated">
+          <div class="comp-preview" style="flex-direction:column;gap:12px">
+            <div class="p-check-row">
+              <div class="p-checkbox p-checkbox-on">✓</div>
+              <span>I agree to the terms</span>
+            </div>
+            <div class="p-check-row">
+              <div class="p-checkbox p-checkbox-off"></div>
+              <span>Subscribe to newsletter</span>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Checkbox</span><span class="comp-desc">Animated checkmark · label support</span></div>
+        </div>
+
+        <!-- 9. Toast -->
+        <div class="comp-card reveal" data-tags="Overlay,Animated">
+          <div class="comp-preview">
+            <div class="p-toast">
+              <div class="p-toast-icon" style="background:var(--emerald)">✓</div>
+              <div>
+                <div class="p-toast-title">Changes saved</div>
+                <div class="p-toast-desc">Your project has been updated.</div>
+              </div>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Toast</span><span class="comp-desc">4 types · auto-dismiss · animated</span></div>
+        </div>
+
+        <!-- 10. Skeleton -->
+        <div class="comp-card reveal" data-tags="Utility,Animated">
+          <div class="comp-preview" style="flex-direction:column;gap:10px;align-items:flex-start;width:100%;padding:24px 32px">
+            <div style="display:flex;gap:12px;align-items:center;width:100%">
+              <div class="p-skeleton" style="width:40px;height:40px;border-radius:50%;flex-shrink:0"></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+                <div class="p-skeleton" style="height:12px;border-radius:6px;width:70%"></div>
+                <div class="p-skeleton" style="height:10px;border-radius:5px;width:45%"></div>
+              </div>
+            </div>
+            <div class="p-skeleton" style="height:10px;border-radius:5px;width:90%"></div>
+            <div class="p-skeleton" style="height:10px;border-radius:5px;width:60%"></div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Skeleton</span><span class="comp-desc">Shimmer loading placeholders</span></div>
+        </div>
+
+        <!-- 11. Spinner -->
+        <div class="comp-card reveal" data-tags="Utility,Animated">
+          <div class="comp-preview" style="gap:16px">
+            <div class="p-spinner p-spinner-sm"></div>
+            <div class="p-spinner"></div>
+            <div class="p-spinner p-spinner-lg" style="border-top-color:var(--violet)"></div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Spinner</span><span class="comp-desc">3 sizes · custom color</span></div>
+        </div>
+
+        <!-- 12. IconButton -->
+        <div class="comp-card reveal" data-tags="Core,Interactive">
+          <div class="comp-preview" style="gap:10px">
+            <div class="p-icon-btn p-icon-btn-solid">♥</div>
+            <div class="p-icon-btn p-icon-btn-outline">✎</div>
+            <div class="p-icon-btn p-icon-btn-ghost">⟳</div>
+            <div class="p-icon-btn p-icon-btn-soft">★</div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">IconButton</span><span class="comp-desc">4 variants · compact icon actions</span></div>
+        </div>
+
+        <!-- 13. Tabs -->
+        <div class="comp-card reveal" data-tags="Navigation,Animated,Data Display">
+          <div class="comp-preview" style="padding:24px 0 0 0">
+            <div class="p-tabs">
+              <div class="p-tab p-tab-active">Home</div>
+              <div class="p-tab">Explore</div>
+              <div class="p-tab">Profile</div>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Tabs</span><span class="comp-desc">Underline · pill · soft variants</span></div>
+        </div>
+
+        <!-- 14. SearchBar -->
+        <div class="comp-card reveal" data-tags="Form,Interactive">
+          <div class="comp-preview" style="padding:24px 20px">
+            <div class="p-searchbar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:rgba(255,255,255,0.3);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span style="font-size:13px;color:rgba(255,255,255,0.3)">Search components...</span>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">SearchBar</span><span class="comp-desc">Clear button · loading indicator</span></div>
+        </div>
+
+        <!-- 15. Accordion -->
+        <div class="comp-card reveal" data-tags="Layout,Animated">
+          <div class="comp-preview" style="flex-direction:column;padding:16px 24px;align-items:stretch;width:100%">
+            <div class="p-accordion-item">
+              <div class="p-accordion-header">
+                <span>What is nova-native-ui?</span>
+                <span class="p-accordion-chevron" style="transform:rotate(90deg)">›</span>
+              </div>
+              <div class="p-accordion-body">A modern, customizable React Native UI component library built with TypeScript.</div>
+            </div>
+            <div class="p-accordion-item">
+              <div class="p-accordion-header">
+                <span>Is it free?</span>
+                <span class="p-accordion-chevron">›</span>
+              </div>
+              <div class="p-accordion-body" style="display:none">Yes, MIT licensed and free forever.</div>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Accordion</span><span class="comp-desc">Expandable sections · animated</span></div>
+        </div>
+
+        <!-- 16. Progress -->
+        <div class="comp-card reveal" data-tags="Utility,Animated">
+          <div class="comp-preview" style="flex-direction:column;gap:16px;width:100%;padding:28px 28px">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                <span style="font-size:12px;color:rgba(255,255,255,0.5)">Progress</span>
+                <span style="font-size:12px;color:rgba(255,255,255,0.5)">72%</span>
+              </div>
+              <div style="height:6px;border-radius:3px;background:rgba(255,255,255,0.1);overflow:hidden">
+                <div style="width:72%;height:100%;border-radius:3px;background:var(--indigo)"></div>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.3);margin-bottom:6px">Loading...</div>
+              <div style="height:4px;border-radius:2px;background:rgba(255,255,255,0.1);overflow:hidden">
+                <div class="p-progress-animated" style="height:100%;border-radius:2px;background:var(--violet)"></div>
+              </div>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Progress</span><span class="comp-desc">Linear · circular · indeterminate</span></div>
+        </div>
+
+        <!-- 17. Slider -->
+        <div class="comp-card reveal" data-tags="Form,Gesture">
+          <div class="comp-preview" style="padding:28px 28px;width:100%">
+            <div style="width:100%;position:relative">
+              <div style="height:6px;border-radius:3px;background:rgba(255,255,255,0.1)">
+                <div style="width:60%;height:100%;border-radius:3px;background:var(--indigo)"></div>
+              </div>
+              <div style="position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--gray-900);box-shadow:0 0 8px rgba(99,102,241,0.4)"></div>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Slider</span><span class="comp-desc">Draggable · step support · value display</span></div>
+        </div>
+
+        <!-- 18. OTPInput -->
+        <div class="comp-card reveal" data-tags="Form,Animated">
+          <div class="comp-preview" style="gap:8px">
+            <div class="p-otp-cell p-otp-filled">4</div>
+            <div class="p-otp-cell p-otp-filled">8</div>
+            <div class="p-otp-cell p-otp-filled">2</div>
+            <div class="p-otp-cell p-otp-active"></div>
+            <div class="p-otp-cell"></div>
+            <div class="p-otp-cell"></div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">OTPInput</span><span class="comp-desc">PIN code · auto-advance · 4-6 cells</span></div>
+        </div>
+
+        <!-- 19. BottomSheet -->
+        <div class="comp-card reveal" data-tags="Overlay,Gesture">
+          <div class="comp-preview" style="align-items:flex-end;padding-bottom:0">
+            <div class="p-bottomsheet">
+              <div class="p-bottomsheet-handle"></div>
+              <div style="font-size:14px;font-weight:650;color:#fff;margin-bottom:4px">Sheet Title</div>
+              <div style="font-size:11.5px;color:rgba(255,255,255,0.4)">Drag to expand or dismiss</div>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">BottomSheet</span><span class="comp-desc">Snap points · draggable · backdrop</span></div>
+        </div>
+
+        <!-- 20. FAB -->
+        <div class="comp-card reveal" data-tags="Core,Interactive">
+          <div class="comp-preview" style="gap:14px">
+            <div class="p-fab" style="font-size:22px;font-weight:300">+</div>
+            <div class="p-fab p-fab-extended" style="display:flex;align-items:center;font-size:13.5px;font-weight:600">
+              <span style="font-size:18px;font-weight:300">+</span>
+              <span>Create</span>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">FAB</span><span class="comp-desc">Standard · extended · positioned</span></div>
+        </div>
+
+        <!-- 21. GlowCard -->
+        <div class="comp-card reveal" data-tags="Animated,Decorative">
           <div class="comp-preview">
             <div class="p-glow-card">
               <div class="p-glow-card-inner">
@@ -1229,7 +1129,38 @@
           <div class="comp-meta"><span class="comp-name">GlowCard</span><span class="comp-desc">Pulsing glow · rainbow mode</span></div>
         </div>
 
-        <div class="comp-card reveal reveal-delay-1">
+        <!-- 22. AnimatedNumber -->
+        <div class="comp-card reveal" data-tags="Animated,Data Display">
+          <div class="comp-preview" style="flex-direction:column;gap:4px">
+            <div class="p-counter" style="font-size:36px;font-weight:700;letter-spacing:-0.03em" data-target="12847">0</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.35)">Total users</div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">AnimatedNumber</span><span class="comp-desc">Counting animation · easing</span></div>
+        </div>
+
+        <!-- 23. Marquee -->
+        <div class="comp-card reveal" data-tags="Animated,Decorative">
+          <div class="comp-preview" style="overflow:hidden;padding:24px 0;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)">
+            <div class="p-marquee">
+              <span class="p-marquee-item">React Native</span><span class="p-marquee-dot">·</span>
+              <span class="p-marquee-item">TypeScript</span><span class="p-marquee-dot">·</span>
+              <span class="p-marquee-item">Open Source</span><span class="p-marquee-dot">·</span>
+              <span class="p-marquee-item">Accessible</span><span class="p-marquee-dot">·</span>
+              <span class="p-marquee-item">Animated</span><span class="p-marquee-dot">·</span>
+              <span class="p-marquee-item">Zero Deps</span><span class="p-marquee-dot">·</span>
+              <span class="p-marquee-item">React Native</span><span class="p-marquee-dot">·</span>
+              <span class="p-marquee-item">TypeScript</span><span class="p-marquee-dot">·</span>
+              <span class="p-marquee-item">Open Source</span><span class="p-marquee-dot">·</span>
+              <span class="p-marquee-item">Accessible</span><span class="p-marquee-dot">·</span>
+              <span class="p-marquee-item">Animated</span><span class="p-marquee-dot">·</span>
+              <span class="p-marquee-item">Zero Deps</span><span class="p-marquee-dot">·</span>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Marquee</span><span class="comp-desc">Infinite scroll · pause on press</span></div>
+        </div>
+
+        <!-- 24. ShimmerButton -->
+        <div class="comp-card reveal" data-tags="Animated,Interactive">
           <div class="comp-preview">
             <button class="p-shimmer-btn">
               <span style="position:relative;z-index:1">Shimmer Button</span>
@@ -1239,88 +1170,62 @@
           <div class="comp-meta"><span class="comp-name">ShimmerButton</span><span class="comp-desc">Shimmer sweep animation</span></div>
         </div>
 
-        <div class="comp-card reveal reveal-delay-2">
+        <!-- 25. GradientText -->
+        <div class="comp-card reveal" data-tags="Animated,Decorative">
           <div class="comp-preview">
             <span class="p-gradient-text">nova-native-ui</span>
           </div>
           <div class="comp-meta"><span class="comp-name">GradientText</span><span class="comp-desc">Per-char colors · animated</span></div>
         </div>
 
-      </div>
+        <!-- 26. StaggeredList -->
+        <div class="comp-card reveal" data-tags="Animated,Layout">
+          <div class="comp-preview" style="flex-direction:column;gap:8px;width:100%;padding:20px 28px">
+            <div class="p-stagger p-stagger-1" style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.04)">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--indigo)"></div>
+              <span style="font-size:12.5px;color:rgba(255,255,255,0.6)">First item</span>
+            </div>
+            <div class="p-stagger p-stagger-2" style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.04)">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--violet)"></div>
+              <span style="font-size:12.5px;color:rgba(255,255,255,0.6)">Second item</span>
+            </div>
+            <div class="p-stagger p-stagger-3" style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.04)">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--emerald)"></div>
+              <span style="font-size:12.5px;color:rgba(255,255,255,0.6)">Third item</span>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">StaggeredList</span><span class="comp-desc">Sequential reveal animation</span></div>
+        </div>
 
-      <div style="text-align:center;margin-top:48px" class="reveal">
-        <a href="components.html" class="btn btn-primary" style="padding:14px 32px;font-size:15px">
-          Browse All 35+ Components
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.3)">Interactive previews, code examples, and props documentation</p>
-      </div>
-    </div>
-  </section>
+        <!-- 27. Ripple -->
+        <div class="comp-card reveal" data-tags="Interactive,Animated">
+          <div class="comp-preview">
+            <div class="p-ripple-demo" onclick="rippleEffect(event, this)">
+              <span style="position:relative;z-index:1;font-size:13.5px;font-weight:600;color:#fff">Tap for Ripple</span>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">Ripple</span><span class="comp-desc">Material ripple feedback</span></div>
+        </div>
 
-  <!-- CODE -->
-  <section class="code-section" id="code">
-    <div class="section-header reveal">
-      <div class="section-tag">Quick Start</div>
-      <h2 class="section-heading">Ready in under a minute</h2>
-      <p class="section-sub">Install, wrap with ThemeProvider, and start building.</p>
-    </div>
-    <div class="code-window reveal">
-      <div class="code-topbar">
-        <div class="code-dot code-dot-red"></div>
-        <div class="code-dot code-dot-yellow"></div>
-        <div class="code-dot code-dot-green"></div>
-        <span class="code-filename">App.tsx</span>
-      </div>
-      <div class="code-body">
-        <pre><span class="c-kw">import</span> <span class="c-br">{</span>
-  <span class="c-w">ThemeProvider</span><span class="c-br">,</span> <span class="c-w">ToastProvider</span><span class="c-br">,</span>
-  <span class="c-w">Button</span><span class="c-br">,</span> <span class="c-w">NovaText</span><span class="c-br">,</span> <span class="c-w">Input</span><span class="c-br">,</span>
-  <span class="c-w">Card</span><span class="c-br">,</span> <span class="c-w">VStack</span><span class="c-br">,</span>
-<span class="c-br">}</span> <span class="c-kw">from</span> <span class="c-str">'nova-native-ui'</span><span class="c-br">;</span>
+        <!-- 28. LogoCloud -->
+        <div class="comp-card reveal" id="lc-card" data-tags="Animated,Layout,Decorative">
+          <div class="comp-preview" style="flex-direction:column;padding:20px 16px 8px">
+            <div class="p-logocloud" id="lc-cloud"></div>
+            <div class="p-lc-variant-switch">
+              <button class="p-lc-vbtn p-lc-vbtn-active" onclick="switchLogoVariant('grid', this)">Grid</button>
+              <button class="p-lc-vbtn" onclick="switchLogoVariant('marquee', this)">Marquee</button>
+              <button class="p-lc-vbtn" onclick="switchLogoVariant('blur', this)">Blur Flip</button>
+              <button class="p-lc-vbtn" onclick="switchLogoVariant('spotlight', this)">Spotlight</button>
+            </div>
+          </div>
+          <div class="comp-meta"><span class="comp-name">LogoCloud</span><span class="comp-desc">4 layout variants · animated</span></div>
+        </div>
 
-<span class="c-kw">export default function</span> <span class="c-fn">App</span><span class="c-br">() {</span>
-  <span class="c-kw">return</span> <span class="c-br">(</span>
-    <span class="c-br">&lt;</span><span class="c-comp">ThemeProvider</span> <span class="c-prop">darkMode</span><span class="c-br">={</span><span class="c-kw">false</span><span class="c-br">}&gt;</span>
-      <span class="c-br">&lt;</span><span class="c-comp">ToastProvider</span><span class="c-br">&gt;</span>
-        <span class="c-br">&lt;</span><span class="c-comp">VStack</span> <span class="c-prop">spacing</span><span class="c-br">=</span><span class="c-str">"lg"</span> <span class="c-prop">padding</span><span class="c-br">=</span><span class="c-str">"lg"</span><span class="c-br">&gt;</span>
-          <span class="c-br">&lt;</span><span class="c-comp">NovaText</span> <span class="c-prop">variant</span><span class="c-br">=</span><span class="c-str">"h1"</span><span class="c-br">&gt;</span><span class="c-w">Welcome</span><span class="c-br">&lt;/</span><span class="c-comp">NovaText</span><span class="c-br">&gt;</span>
-
-          <span class="c-br">&lt;</span><span class="c-comp">Card</span> <span class="c-prop">variant</span><span class="c-br">=</span><span class="c-str">"elevated"</span> <span class="c-prop">padding</span><span class="c-br">=</span><span class="c-str">"lg"</span><span class="c-br">&gt;</span>
-            <span class="c-br">&lt;</span><span class="c-comp">Input</span>
-              <span class="c-prop">label</span><span class="c-br">=</span><span class="c-str">"Email"</span>
-              <span class="c-prop">placeholder</span><span class="c-br">=</span><span class="c-str">"you@example.com"</span>
-            <span class="c-br">/&gt;</span>
-            <span class="c-br">&lt;</span><span class="c-comp">Button</span> <span class="c-prop">color</span><span class="c-br">=</span><span class="c-str">"primary"</span> <span class="c-prop">fullWidth</span><span class="c-br">&gt;</span>
-              <span class="c-w">Sign In</span>
-            <span class="c-br">&lt;/</span><span class="c-comp">Button</span><span class="c-br">&gt;</span>
-          <span class="c-br">&lt;/</span><span class="c-comp">Card</span><span class="c-br">&gt;</span>
-        <span class="c-br">&lt;/</span><span class="c-comp">VStack</span><span class="c-br">&gt;</span>
-      <span class="c-br">&lt;/</span><span class="c-comp">ToastProvider</span><span class="c-br">&gt;</span>
-    <span class="c-br">&lt;/</span><span class="c-comp">ThemeProvider</span><span class="c-br">&gt;</span>
-  <span class="c-br">);</span>
-<span class="c-br">}</span></pre>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="cta-bg"></div>
-    <div class="cta-content reveal">
-      <h2>Start shipping<br/>beautiful apps today</h2>
-      <p>Open source, free forever. Star us on GitHub and join the community.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a href="https://github.com/ibidi/nova-ui" class="btn btn-cta-primary" target="_blank">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          Star on GitHub
-        </a>
-        <a href="https://www.npmjs.com/package/nova-native-ui" class="btn btn-cta-ghost" target="_blank">View on npm</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPONENT DETAIL MODAL -->
+  <!-- MODAL -->
   <div class="modal-overlay" id="compModal">
     <div class="modal-content">
       <div class="modal-header">
@@ -1375,129 +1280,6 @@
   </footer>
 
   <script>
-    // ═══ COLORBENDS WEBGL SHADER ═══
-    (function() {
-      const canvas = document.getElementById('heroCanvas');
-      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-      if (!gl) return;
-
-      const hero = document.getElementById('hero');
-      let mouse = { x: 0.5, y: 0.5 };
-      let targetMouse = { x: 0.5, y: 0.5 };
-
-      hero.addEventListener('mousemove', (e) => {
-        const rect = hero.getBoundingClientRect();
-        targetMouse.x = (e.clientX - rect.left) / rect.width;
-        targetMouse.y = (e.clientY - rect.top) / rect.height;
-      });
-
-      function resize() {
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        canvas.width = hero.offsetWidth * dpr;
-        canvas.height = hero.offsetHeight * dpr;
-        gl.viewport(0, 0, canvas.width, canvas.height);
-      }
-      resize();
-      window.addEventListener('resize', resize);
-
-      const vsrc = `attribute vec2 a_pos;void main(){gl_Position=vec4(a_pos,0,1);}`;
-      const fsrc = `
-precision highp float;
-uniform float u_time;
-uniform vec2 u_resolution;
-uniform vec2 u_mouse;
-uniform vec3 u_c0, u_c1, u_c2;
-
-vec3 hash(vec3 p) {
-  p = vec3(dot(p,vec3(127.1,311.7,74.7)),dot(p,vec3(269.5,183.3,246.1)),dot(p,vec3(113.5,271.9,124.6)));
-  return -1.0 + 2.0 * fract(sin(p) * 43758.5453123);
-}
-float noise(vec3 p) {
-  vec3 i = floor(p), f = fract(p);
-  vec3 u = f*f*(3.0-2.0*f);
-  return mix(mix(mix(dot(hash(i),f),dot(hash(i+vec3(1,0,0)),f-vec3(1,0,0)),u.x),
-    mix(dot(hash(i+vec3(0,1,0)),f-vec3(0,1,0)),dot(hash(i+vec3(1,1,0)),f-vec3(1,1,0)),u.x),u.y),
-    mix(mix(dot(hash(i+vec3(0,0,1)),f-vec3(0,0,1)),dot(hash(i+vec3(1,0,1)),f-vec3(1,0,1)),u.x),
-    mix(dot(hash(i+vec3(0,1,1)),f-vec3(0,1,1)),dot(hash(i+vec3(1,1,1)),f-vec3(1,1,1)),u.x),u.y),u.z);
-}
-
-void main() {
-  vec2 uv = gl_FragCoord.xy / u_resolution;
-  float aspect = u_resolution.x / u_resolution.y;
-  vec2 p = (uv - 0.5) * vec2(aspect, 1.0);
-
-  float t = u_time * 0.2;
-  vec2 mOff = (u_mouse - 0.5) * 0.3;
-  p += mOff;
-
-  float angle = 0.785;
-  float ca = cos(angle + t * 0.05), sa = sin(angle + t * 0.05);
-  p = mat2(ca, -sa, sa, ca) * p;
-
-  float n1 = noise(vec3(p * 1.8, t * 0.4)) * 1.0;
-  float n2 = noise(vec3(p * 3.2 + 5.0, t * 0.3)) * 0.5;
-  float warp = n1 + n2;
-
-  float band = p.x + p.y + warp;
-  float s1 = smoothstep(-0.4, 0.6, sin(band * 2.5 + t));
-  float s2 = smoothstep(-0.4, 0.6, sin(band * 2.5 + t + 2.094));
-  float s3 = smoothstep(-0.4, 0.6, sin(band * 2.5 + t + 4.189));
-
-  vec3 col = u_c0 * s1 + u_c1 * s2 + u_c2 * s3;
-  col *= 0.7;
-
-  float vignette = 1.0 - length((uv - 0.5) * 1.4);
-  vignette = smoothstep(0.0, 0.7, vignette);
-  col *= vignette;
-
-  col = mix(vec3(0.035, 0.035, 0.043), col, 0.85);
-
-  gl_FragColor = vec4(col, 1.0);
-}`;
-
-      function compile(type, src) {
-        const s = gl.createShader(type);
-        gl.shaderSource(s, src);
-        gl.compileShader(s);
-        return s;
-      }
-      const prog = gl.createProgram();
-      gl.attachShader(prog, compile(gl.VERTEX_SHADER, vsrc));
-      gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, fsrc));
-      gl.linkProgram(prog);
-      gl.useProgram(prog);
-
-      const buf = gl.createBuffer();
-      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
-      const aPos = gl.getAttribLocation(prog, 'a_pos');
-      gl.enableVertexAttribArray(aPos);
-      gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
-
-      const uTime = gl.getUniformLocation(prog, 'u_time');
-      const uRes = gl.getUniformLocation(prog, 'u_resolution');
-      const uMouse = gl.getUniformLocation(prog, 'u_mouse');
-      const uC0 = gl.getUniformLocation(prog, 'u_c0');
-      const uC1 = gl.getUniformLocation(prog, 'u_c1');
-      const uC2 = gl.getUniformLocation(prog, 'u_c2');
-
-      gl.uniform3f(uC0, 0.322, 0.153, 1.0);
-      gl.uniform3f(uC1, 1.0, 0.624, 0.988);
-      gl.uniform3f(uC2, 0.486, 1.0, 0.404);
-
-      function frame(now) {
-        mouse.x += (targetMouse.x - mouse.x) * 0.03;
-        mouse.y += (targetMouse.y - mouse.y) * 0.03;
-
-        gl.uniform1f(uTime, now * 0.001);
-        gl.uniform2f(uRes, canvas.width, canvas.height);
-        gl.uniform2f(uMouse, mouse.x, 1.0 - mouse.y);
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-        requestAnimationFrame(frame);
-      }
-      requestAnimationFrame(frame);
-    })();
-
     // ═══ COMPONENT DATA ═══
     const COMPONENTS = {
       Button: {
@@ -1755,7 +1537,7 @@ toast.show({
       },
       Tabs: {
         desc: 'Tab navigation with underline, pill, and soft variants. Supports animated indicator.',
-        tags: ['Navigation', 'Animated'],
+        tags: ['Navigation', 'Animated', 'Data Display'],
         import: `import { Tabs } from 'nova-native-ui';`,
         usage: `const [tab, setTab] = useState(0);
 
@@ -2118,23 +1900,6 @@ import type { LogoItem } from 'nova-native-ui';`,
       }
     };
 
-    // ═══ NAVBAR ═══
-    const nav = document.getElementById('navbar');
-    const heroEl = document.getElementById('hero');
-    window.addEventListener('scroll', () => {
-      const heroBottom = heroEl ? heroEl.offsetHeight - 80 : 300;
-      nav.classList.toggle('scrolled', scrollY > heroBottom);
-    });
-
-    // ═══ COPY INSTALL ═══
-    function copyInstall() {
-      navigator.clipboard.writeText('npm install nova-native-ui');
-      const btn = document.getElementById('copyBtn');
-      btn.textContent = 'Copied!';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
-    }
-
     // ═══ SCROLL REVEAL ═══
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -2142,28 +1907,6 @@ import type { LogoItem } from 'nova-native-ui';`,
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // ═══ ANIMATED STAT COUNTERS ═══
-    function animateCount(el, target, duration) {
-      const start = performance.now();
-      const update = (now) => {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(target * eased);
-        if (progress < 1) requestAnimationFrame(update);
-      };
-      requestAnimationFrame(update);
-    }
-    const countObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const count = parseInt(entry.target.dataset.count);
-          if (!isNaN(count) && count > 0) animateCount(entry.target, count, 1200);
-          countObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
 
     // ═══ INTERACTIVE PREVIEWS ═══
     document.querySelectorAll('.p-switch').forEach(sw => {
@@ -2320,7 +2063,7 @@ import type { LogoItem } from 'nova-native-ui';`,
       setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
     }
 
-    // ═══ INTERACTIVE BUTTON COLOR CHANGER ═══
+    // ═══ BUTTON COLOR CHANGER ═══
     const BTN_COLORS = {
       indigo: { solid: '#6366F1', hover: '#5558E6', rgb: '99,102,241' },
       violet: { solid: '#8B5CF6', hover: '#7C3AED', rgb: '139,92,246' },
@@ -2451,8 +2194,27 @@ import type { LogoItem } from 'nova-native-ui';`,
       }
     }
 
-    // Init avatar to "initials" by default
+    // ═══ FILTER TABS ═══
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.comp-card').forEach(card => {
+          if (filter === 'All') {
+            card.classList.remove('hidden');
+          } else {
+            const tags = card.dataset.tags || '';
+            card.classList.toggle('hidden', !tags.includes(filter));
+          }
+        });
+      });
+    });
+
+    // ═══ INIT: LogoCloud grid + Avatar initials ═══
     (function() {
+      switchLogoVariant('grid', document.querySelector('.p-lc-vbtn'));
+
       const stack = document.getElementById('avatar-stack');
       if (stack) {
         stack.innerHTML = [
